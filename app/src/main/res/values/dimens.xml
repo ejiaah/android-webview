@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="config_text_size">15sp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="webview_gnb_height">48dp</dimen>
+    <dimen name="webview_gnb_button_width">48dp</dimen>
+    <dimen name="webview_gnb_button_height">48dp</dimen>
+    <dimen name="webview_controller_height">44dp</dimen>
+    <dimen name="webview_progressbar_height">4dp</dimen>
+</resources>

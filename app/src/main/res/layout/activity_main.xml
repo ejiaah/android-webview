@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <data>
+
+        <variable
+            name="handlers"
+            type="com.ejiaah.webview.MainActivity.Handler" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/webview_config"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:text="WebView Configuration"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="150dp" />
+
+        <!--Titlebar-->
+        <TextView
+            android:id="@+id/config_titlebar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/config_titlebar"
+            android:textSize="@dimen/config_text_size"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/webview_config" />
+
+        <RadioGroup
+            android:id="@+id/radio_titlebar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@+id/config_titlebar"
+            app:layout_constraintStart_toEndOf="@+id/config_titlebar"
+            app:layout_constraintTop_toTopOf="@+id/config_titlebar">
+
+            <RadioButton
+                android:id="@+id/radio_titlebar_true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/config_true" />
+
+            <RadioButton
+                android:id="@+id/radio_titlebar_false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/config_false" />
+        </RadioGroup>
+
+        <!--Progressbar-->
+        <TextView
+            android:id="@+id/config_progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/config_progressbar"
+            android:textSize="@dimen/config_text_size"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/config_titlebar" />
+
+        <RadioGroup
+            android:id="@+id/radio_progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@+id/config_progressbar"
+            app:layout_constraintStart_toEndOf="@+id/config_progressbar"
+            app:layout_constraintTop_toTopOf="@+id/config_progressbar">
+
+            <RadioButton
+                android:id="@+id/radio_progressbar_true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/config_true" />
+
+            <RadioButton
+                android:id="@+id/radio_progressbar_false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/config_false" />
+        </RadioGroup>
+
+        <!--FloatingBack-->
+        <TextView
+            android:id="@+id/config_floating_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/config_floating_back"
+            android:textSize="@dimen/config_text_size"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/config_progressbar" />
+
+        <RadioGroup
+            android:id="@+id/radio_floating_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@+id/config_floating_back"
+            app:layout_constraintStart_toEndOf="@+id/config_floating_back"
+            app:layout_constraintTop_toTopOf="@+id/config_floating_back">
+
+            <RadioButton
+                android:id="@+id/radio_floating_back_true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/config_true" />
+
+            <RadioButton
+                android:id="@+id/radio_floating_back_false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/config_false" />
+        </RadioGroup>
+
+        <!--Controllbar-->
+        <TextView
+            android:id="@+id/config_controllbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/config_controllbar"
+            android:textSize="@dimen/config_text_size"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/config_floating_back" />
+
+        <RadioGroup
+            android:id="@+id/radio_controllbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@+id/config_controllbar"
+            app:layout_constraintStart_toEndOf="@+id/config_controllbar"
+            app:layout_constraintTop_toTopOf="@+id/config_controllbar">
+
+            <RadioButton
+                android:id="@+id/radio_controllbar_true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/config_true" />
+
+            <RadioButton
+                android:id="@+id/radio_controllbar_false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/config_false" />
+        </RadioGroup>
+
+        <!--NotShowToday-->
+        <TextView
+            android:id="@+id/config_not_show_today"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/config_not_show_today"
+            android:textSize="@dimen/config_text_size"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/config_controllbar" />
+
+        <RadioGroup
+            android:id="@+id/radio_not_show_today"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@+id/config_not_show_today"
+            app:layout_constraintStart_toEndOf="@+id/config_not_show_today"
+            app:layout_constraintTop_toTopOf="@+id/config_not_show_today">
+
+            <RadioButton
+                android:id="@+id/radio_not_show_today_true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/config_true" />
+
+            <RadioButton
+                android:id="@+id/radio_not_show_today_false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/config_false" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/show_dialog_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:onClick="@{handlers::onClickListener}"
+            android:text="@string/dialog_show"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/config_not_show_today" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

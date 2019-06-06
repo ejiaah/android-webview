@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">webview</string>
+
+    <string name="config_titlebar">Use Titlebar</string>
+    <string name="config_progressbar">Use Progressbar</string>
+    <string name="config_floating_back">Use FloatingBack</string>
+    <string name="config_controllbar">Use Controllbar</string>
+    <string name="config_not_show_today">Use NotShowToday</string>
+
+    <string name="config_true">True</string>
+    <string name="config_false">False</string>
+
+    <string name="dialog_show">Show</string>
+
+    <string name="webview_not_show_today">오늘은 그만보기</string>
+
+</resources>

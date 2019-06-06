@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f00000">
+
+    <View
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
+        android:id="@+id/safe_area"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/white"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/titlebar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="title,title_stroke_view" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/webview_gnb_height"
+        android:background="#d9000000"
+        android:gravity="center"
+        android:maxLines="2"
+        android:paddingStart="50dp"
+        android:paddingEnd="50dp"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/safe_area"
+        app:layout_constraintStart_toStartOf="@+id/safe_area"
+        app:layout_constraintTop_toTopOf="@+id/safe_area"
+        tools:text="Title" />
+
+    <View
+        android:id="@+id/title_stroke_view"
+        android:layout_width="wrap_content"
+        android:layout_height="3dp"
+        android:background="#ffcc00"
+        app:layout_constraintBottom_toBottomOf="@+id/title"
+        app:layout_constraintEnd_toEndOf="@+id/title"
+        app:layout_constraintStart_toStartOf="@+id/title"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/webview_progressbar_height"
+        android:progressDrawable="@drawable/nm_common_webview_progressbar"
+        app:layout_constraintEnd_toEndOf="@+id/safe_area"
+        app:layout_constraintStart_toStartOf="@+id/safe_area"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <Button
+        android:id="@+id/close_button"
+        android:layout_width="@dimen/webview_gnb_button_width"
+        android:layout_height="@dimen/webview_gnb_button_height"
+        android:background="@drawable/nm_common_webview_close_button"
+        app:layout_constraintEnd_toEndOf="@+id/safe_area"
+        app:layout_constraintTop_toTopOf="@+id/safe_area" />
+
+    <Button
+        android:id="@+id/floating_back_button"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginBottom="18dp"
+        android:background="@drawable/nm_common_webview_back_button"
+        app:layout_constraintBottom_toTopOf="@+id/not_show_today_background"
+        app:layout_constraintStart_toStartOf="@+id/safe_area" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/not_show_today"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="not_show_today_checkbox,not_show_today_text,not_show_today_background" />
+
+    <View
+        android:id="@+id/not_show_today_background"
+        android:layout_width="0dp"
+        android:layout_height="27.5dp"
+        android:layout_marginStart="5.5dp"
+        android:layout_marginBottom="5.5dp"
+        android:background="@drawable/nm_common_webview_do_not_show_today"
+        app:layout_constraintBottom_toTopOf="@+id/controllbar_background"
+        app:layout_constraintEnd_toEndOf="@+id/not_show_today_text"
+        app:layout_constraintStart_toStartOf="@+id/safe_area" />
+
+    <CheckBox
+        android:id="@+id/not_show_today_checkbox"
+        android:layout_width="27.5dp"
+        android:layout_height="27.5dp"
+        android:button="@drawable/nm_common_webview_checkbox_drawable"
+        app:layout_constraintBottom_toBottomOf="@+id/not_show_today_background"
+        app:layout_constraintStart_toStartOf="@+id/not_show_today_background"
+        app:layout_constraintTop_toTopOf="@+id/not_show_today_background" />
+
+    <TextView
+        android:id="@+id/not_show_today_text"
+        android:layout_width="wrap_content"
+        android:layout_height="27.5dp"
+        android:gravity="center_vertical"
+        android:paddingEnd="10dp"
+        android:text="@string/webview_not_show_today"
+        android:textColor="#ffffff"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/not_show_today_background"
+        app:layout_constraintStart_toEndOf="@+id/not_show_today_checkbox"
+        app:layout_constraintTop_toTopOf="@+id/not_show_today_background"
+        tools:text="NotShowToday" />
+
+    <View
+        android:id="@+id/controllbar_background"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/webview_controller_height"
+        android:background="#d9000000"
+        app:layout_constraintBottom_toBottomOf="@+id/safe_area"
+        app:layout_constraintEnd_toEndOf="@+id/safe_area"
+        app:layout_constraintStart_toStartOf="@+id/safe_area" />
+
+    <ImageButton
+        android:id="@+id/backpressed_button"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/webview_controller_height"
+        android:background="@android:color/transparent"
+        android:scaleType="center"
+        android:src="@drawable/nm_common_webview_back_button_drawable"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/controllbar_background"
+        app:layout_constraintEnd_toStartOf="@+id/forward_button"
+        app:layout_constraintStart_toStartOf="@+id/controllbar_background" />
+
+    <ImageButton
+        android:id="@+id/forward_button"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/webview_controller_height"
+        android:background="@android:color/transparent"
+        android:scaleType="center"
+        android:src="@drawable/nm_common_webview_forward_button_drawable"
+        app:layout_constraintBottom_toBottomOf="@+id/controllbar_background"
+        app:layout_constraintEnd_toStartOf="@+id/refresh_button"
+        app:layout_constraintStart_toEndOf="@+id/backpressed_button" />
+
+    <ImageButton
+        android:id="@+id/refresh_button"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/webview_controller_height"
+        android:background="@android:color/transparent"
+        android:scaleType="center"
+        android:src="@drawable/nm_common_webview_refresh_button_drawable"
+        app:layout_constraintBottom_toBottomOf="@+id/controllbar_background"
+        app:layout_constraintEnd_toStartOf="@+id/stop_button"
+        app:layout_constraintStart_toEndOf="@+id/forward_button" />
+
+    <ImageButton
+        android:id="@+id/stop_button"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/webview_controller_height"
+        android:background="@android:color/transparent"
+        android:scaleType="center"
+        android:src="@drawable/nm_common_webview_stop_button_drawable"
+        app:layout_constraintBottom_toBottomOf="@+id/controllbar_background"
+        app:layout_constraintEnd_toStartOf="@+id/browser_button"
+        app:layout_constraintStart_toEndOf="@+id/refresh_button" />
+
+    <ImageButton
+        android:id="@+id/browser_button"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/webview_controller_height"
+        android:background="@android:color/transparent"
+        android:scaleType="center"
+        android:src="@drawable/nm_common_webview_browser_button_drawable"
+        app:layout_constraintBottom_toBottomOf="@+id/controllbar_background"
+        app:layout_constraintEnd_toStartOf="@+id/share_button"
+        app:layout_constraintStart_toEndOf="@+id/stop_button" />
+
+    <ImageButton
+        android:id="@+id/share_button"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/webview_controller_height"
+        android:background="@android:color/transparent"
+        android:scaleType="center"
+        android:src="@drawable/nm_common_webview_share_button_drawable"
+        app:layout_constraintBottom_toBottomOf="@+id/controllbar_background"
+        app:layout_constraintEnd_toEndOf="@+id/controllbar_background"
+        app:layout_constraintStart_toEndOf="@+id/browser_button" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
